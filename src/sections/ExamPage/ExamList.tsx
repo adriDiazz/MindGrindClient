@@ -33,6 +33,10 @@ function ExamListPage({ setOpened }: ExamListPageProps) {
 		getExams(user?.userId).then((exams) => {
 			setExams(exams);
 		});
+
+		if (exams.length === 0) {
+			setCollapsed([]);
+		}
 	}, [user]);
 
 	return (
