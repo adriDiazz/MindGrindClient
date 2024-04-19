@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-notetube-dev-223735-authRole",
+      "UnauthRoleArn": "arn:aws:iam::947312257487:role/amplify-notetube-dev-223735-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::947312257487:role/amplify-notetube-dev-223735-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-notetube-dev-223735-deployment",
+      "UnauthRoleName": "amplify-notetube-dev-223735-unauthRole",
+      "StackName": "amplify-notetube-dev-223735",
+      "StackId": "arn:aws:cloudformation:eu-north-1:947312257487:stack/amplify-notetube-dev-223735/a6476670-ac12-11ee-a115-0a09eae1129a",
+      "AmplifyAppId": "d1n6cft80yabpq"
+    },
+    "categories": {
+      "auth": {
+        "notetube46d4aabc": {
+          "userPoolId": "eu-north-1_8WHgzGTv6",
+          "userPoolName": "NoteTube",
+          "webClientId": "4nrak138deni9nqeddke4pu4ur",
+          "nativeClientId": "4nrak138deni9nqeddke4pu4ur"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.wrapper {
+	width: 20rem;
+	height: 20rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	label {
+		font-family: "MazzardR";
+		font-size: 1rem;
+		font-weight: 400;
+		color: var(--dark-blue);
+		margin-bottom: 0.5rem;
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	input {
+		width: 90%;
+		border: none;
+		border-radius: 5px;
+		padding: 0.7rem;
+		font-family: "MazzardR";
+		color: var(--dark-blue);
+		border: #adadad 1px solid;
+
+		&:focus {
+			outline: none;
+			border: var(--purple) 1px solid;
+		}
+	}
+}

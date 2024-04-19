@@ -1,0 +1,122 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    border-radius: 5px;
+    border: 1px solid #dfe1e5;
+    max-height: 275px;
+    cursor: pointer;
+    background-size: cover ; /* Asegura que la imagen cubra completamente el contenedor */
+    background-position: center left; /* Centra la imagen y la desplaza hacia la derecha */
+    background-repeat: no-repeat;
+
+    &:hover {
+        border: 1px solid var(--purple);
+    }
+}
+
+.tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'MazzardR';
+
+    .change {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        width: 100%;
+        padding: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--grey);
+        }
+    }
+
+    .delete {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        width: 100%;
+        padding: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--grey);
+        }
+    }
+}
+
+.bottom {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border-top: 1px solid #dfe1e5;
+    font-family: 'MazzardR';
+    font-size: 0.9rem;
+
+    .date {
+        color: #A0A0A0;
+    }
+
+    .title {
+        margin-left: 1rem;
+    }
+
+    .titleWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding-left: 1rem;
+        gap: 1rem;
+        margin-top: 0.5rem;
+
+        .imgOptions {
+            width: 30px;
+            height: 30px;
+            transform: rotate(90deg);
+            margin-right: 1rem;
+            margin-left: 1rem;
+            z-index: 1000;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--grey);
+                border-radius: 50%;
+            }
+        }
+
+    }
+}
+
+
+
+.wrapperAddNote {
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid var(--purple);
+    max-height: 283px;
+    background-color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F5F5F5;
+    }
+}

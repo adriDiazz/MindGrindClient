@@ -1,0 +1,38 @@
+.buttonWhite {
+	padding: 0.5rem 2.4rem;
+	background-color: var(--white);
+	color: var(--purple);
+	border: var(--purple) 1px solid;
+	border-radius: 5px;
+	cursor: pointer;
+	vertical-align: middle;
+	white-space: nowrap;
+	user-select: none;
+
+	&:hover {
+		background-color: #6a67fd;
+		color: var(--white);
+	}
+}
+
+.button {
+	padding: 0.5rem 2.4rem;
+	background-color: var(--purple);
+	color: var(--white);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	vertical-align: middle;
+	white-space: nowrap;
+	user-select: none;
+	font-family: "MazzardR";
+	width: 7.4rem;
+    height: 2rem;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+
+	&:hover {
+		background-color: #6a67fd;
+	}
+}

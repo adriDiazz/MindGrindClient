@@ -1,0 +1,31 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    font-family: "MazzardR";
+
+    input {
+			width: 20rem;
+			border: none;
+			border-radius: 5px;
+			padding: 0.7rem;
+			font-family: "MazzardR";
+			color: var(--dark-blue);
+			border: #adadad 1px solid;
+
+			&:focus {
+				outline: none;
+				border: var(--purple) 1px solid;
+			}
+		}
+
+    .btnWrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+}

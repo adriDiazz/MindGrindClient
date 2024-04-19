@@ -1,0 +1,21 @@
+@import url(normalicer.css);
+@import url(theme.css);
+
+body {
+    background-color: var(--background-body);
+}
+
+._rootContentEditableWrapper_11eqz_1047 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+._contentEditable_11eqz_352 {
+    width: 70%;
+    min-height: 100vh;
+}
+
+._editorRoot_11eqz_38{
+    min-width: 98vw;
+}

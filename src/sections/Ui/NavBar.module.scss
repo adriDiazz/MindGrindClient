@@ -1,0 +1,135 @@
+.wrapper {
+	font-family: "CabinetBold";
+	
+	background-color: var(--white);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: large;
+
+	.logoWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1.5rem;
+		gap: 1rem;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	.navList {
+		width: 70%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 4rem;
+		list-style: none;
+		font-family: "CabinetMedium";
+
+		li {
+			cursor: pointer;
+			text-decoration: none;
+			a,
+			a:visited,
+			a:hover,
+			a:active {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.navMobile {
+		display: none;
+	}
+}
+
+.noteWrapper {
+	width: 85%;
+
+	.bottom {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 1rem;
+	}
+	.bottom span {
+		color: #928b8b;
+	}
+
+	input {
+		color: #928b8b;
+	}
+
+	.editIcon {
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	svg {
+		width: 20px;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.wrapper {
+		font-family: "CabinetBold";
+		width: 100vw;
+		background-color: var(--white);
+		display: flex;
+		align-items: center;
+		gap: 9rem;
+
+		.navMobile {
+			display: block;
+		}
+
+		.logoWrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 1.5rem;
+			gap: 1rem;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			img {
+				padding: 0.5rem;
+			}
+		}
+
+		.navList {
+			display: none;
+
+			li {
+				cursor: pointer;
+				text-decoration: none;
+				display: none;
+				a,
+				a:visited,
+				a:hover,
+				a:active {
+					color: inherit;
+					text-decoration: none;
+					display: none;
+				}
+			}
+		}
+	}
+
+	.navbtn {
+		display: none;
+	}
+}

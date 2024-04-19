@@ -1,0 +1,117 @@
+.glowable-text {
+    color: black;
+}
+
+[glow] .glowable-text {
+    color: var(--glow-color);
+}
+
+
+ .btn-green {
+        background-color: #ffffff7c;
+        border: #7fc910 1px solid;
+        padding: 0.5rem 2.4rem;
+        border-radius: 22px;
+        font-family: 'CabinetMedium';
+        cursor: pointer;
+ }
+ .btn-blue {
+        background-color: #ffffff7c;
+        border: #4687f7 1px solid;
+        padding: 0.5rem 2.4rem;
+        border-radius: 22px;
+        font-family: 'CabinetMedium';
+        cursor: pointer;
+ }
+ .btn-purple {
+        background-color: #ffffff7c;
+        border: #5552FF 1px solid;
+        padding: 0.5rem 2.4rem;
+        border-radius: 22px;
+        font-family: 'CabinetMedium';
+        cursor: pointer;
+ }
+
+ .btnWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        cursor: pointer;
+ }
+
+ .wrapper-green {
+     background-color: var(--card-green);
+     width: 17rem;
+     height: 14rem;
+     padding: 5rem 2rem;
+     font-family: 'CabinetBold';
+     display: flex;
+     justify-content: flex-start;
+     align-items: flex-start;
+     flex-direction: column;
+     gap: 1rem;
+     border-radius: 22px;
+ }
+
+ .wrapper-green span {
+     font-size: 1.5rem;
+     color: var(--dark-blue);
+ }
+
+ .wrapper-green p {
+     font-family: 'MazzardR';
+     margin-bottom: 1rem;
+     color: var(--black);
+ }
+
+ .wrapper-blue {
+     background-color: var(--card-blue);
+     width: 17rem;
+    height: 14rem;
+     padding: 5rem 2rem;     
+     font-family: 'CabinetBold';
+     display: flex;
+     justify-content: flex-start;
+     align-items: flex-start;
+     flex-direction: column;
+     gap: 1rem;
+     border-radius: 22px;
+ }
+
+ .wrapper-blue span {
+     font-size: 1.5rem;
+     color: var(--dark-blue);
+ }
+
+ .wrapper-blue p {
+     font-family: 'MazzardR';
+     margin-bottom: 1rem;
+     color: var(--black);
+ }
+
+ .wrapper-purple {
+     background-color: var(--card-purple);
+     width: 17rem;
+    height: 14rem;
+     padding: 5rem 2rem;
+     font-family: 'CabinetBold';
+     display: flex;
+     justify-content: flex-start;
+     align-items: flex-start;
+     flex-direction: column;
+     gap: 1rem;
+     border-radius: 22px;
+ }
+
+ .wrapper-purple span {
+     font-size: 1.5rem;
+     color: var(--dark-blue);
+ }
+
+ .wrapper-purple p {
+     font-family: 'MazzardR';
+     margin-bottom: 1rem;
+     color: var(--black);
+ }

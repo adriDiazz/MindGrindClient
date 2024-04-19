@@ -1,0 +1,149 @@
+
+:root {
+    --dark-blue: #1E344F;
+    --black: #000000;
+    --white: #FFFFFF;
+    --background-body: #F5F5F5;
+    --purple: #5552FF;
+    --card-green:#E6F5D0;
+    --card-blue:#E7EEFA;
+    --card-purple:#EFE4FC;
+    --swiper-theme-color: #BBF246;
+    --grey: #F5F5F5;
+}
+
+@font-face {
+    font-family: 'MazzardM';
+    src: url("fonts/MazzardH-Medium.otf");
+}
+@font-face {
+    font-family: 'MazzardR';
+    src: url("fonts/MazzardH-Regular.otf");
+}
+@font-face {
+    font-family: 'CabinetBold';
+    src: url("fonts/CabinetGrotesk-Bold.otf");
+}
+@font-face {
+    font-family: 'CabinetMedium';
+    src: url("fonts/CabinetGrotesk-Medium.otf");
+}
+
+._rootContentEditableWrapper_11eqz_1047 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+._contentEditable_11eqz_352 {
+    width: 80%;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--purple);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--purple) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+}
+
+@keyframes l5 {
+    0% {
+        box-shadow: 20px 0 #000, -20px 0 #0002;
+        background: #c0c0c0
+    }
+
+    33% {
+        box-shadow: 20px 0 #000, -20px 0 #0002;
+        background: rgb(217, 215, 215)
+    }
+
+    66% {
+        box-shadow: 20px 0 #0002, -20px 0 #000;
+        background: rgba(248, 246, 246, 0.983)
+    }
+
+    100% {
+        box-shadow: 20px 0 #0002, -20px 0 #000;
+        background: #000
+    }
+}
+
+
+.loader-chat {
+    width: 10px;
+    border-radius: 50%;
+    animation: l6 1s infinite linear alternate;
+}
+
+@keyframes l6 {
+    0% {
+        box-shadow: 20px 0 #5552FF, -20px 0 #0002;
+        background: #c0c0c0
+    }
+
+    33% {
+        box-shadow: 20px 0 #5552FF, -20px 0 #0002;
+        background: rgb(217, 215, 215)
+    }
+
+    66% {
+        box-shadow: 20px 0 #5d5bfa, -20px 0 #000;
+        background: rgba(248, 246, 246, 0.983)
+    }
+
+    100% {
+        box-shadow: 20px 0 #5d5bfa, -20px 0 #000;
+        background: #ffffff
+    }
+}
+
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,
+.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error {
+    background: var(--purple);
+    color: var(--purple);
+}

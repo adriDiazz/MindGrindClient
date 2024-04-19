@@ -1,0 +1,68 @@
+.modalWrapper {
+    width: 75vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "MazzardM";
+    padding-bottom: 0.5rem;
+}
+
+.modalWrapperPdf {
+    width: 80vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .modalWrapper h2 {
+
+
+} */
+
+
+.modalWrapperImage {
+    width: 50%;
+}
+
+.btn {
+    background-color: var(--purple);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--white);
+    -webkit-box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.28);
+    box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btnWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.btnWrapper input  {
+    padding: 0.7rem;
+    width: 50%;
+    border: 1.194px solid #A0A0A0;
+    border-radius: 11.943px;
+    flex: 1;
+}
+
+
+
+.iframeWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

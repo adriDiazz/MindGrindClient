@@ -1,0 +1,45 @@
+{
+  "auth": {
+    "notetube46d4aabc": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_notetube46d4aabc_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "notetube46d4aabc"
+        }
+      ]
+    },
+    "AMPLIFY_auth_notetube46d4aabc_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "notetube46d4aabc"
+        }
+      ]
+    },
+    "AMPLIFY_auth_notetube46d4aabc_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "notetube46d4aabc"
+        }
+      ]
+    },
+    "AMPLIFY_auth_notetube46d4aabc_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "notetube46d4aabc"
+        }
+      ]
+    }
+  }
+}
