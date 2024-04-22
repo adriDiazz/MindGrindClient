@@ -5,13 +5,12 @@ import { NotesProvider } from "./context/NoteContext";
 import { SelectedNoteProvider } from "./context/SelectedNoteContext";
 import { UserProvider } from "./context/UserContext";
 import EditorPage from "./sections/EditorPage/EditorPage";
+import ExamComponent from "./sections/ExamPage/Exam";
 import ExamPage from "./sections/ExamPage/ExamPage";
 import HomePage from "./sections/HomePage/HomePage";
 import Landing from "./sections/Landing/Landing";
 import NotesPage from "./sections/NotesPage/NotesPage";
 import NavBar from "./sections/Ui/NavBar";
-import Exam from "./sections/ExamPage/Exam";
-import ExamComponent from "./sections/ExamPage/Exam";
 
 export function App() {
 	const [isEditorUrl, setIsEditorUrl] = useState(false);

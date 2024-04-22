@@ -2,14 +2,13 @@
 
 .wrapper {
 	font-family: "MazzardR";
-	width: 100vw;
-	height: 77vh;
+	height: 98vh;
 
 	.innerWrapper {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		padding: 4rem;
+
 
 		.rightWrapper {
 			display: flex;
@@ -46,7 +45,7 @@
 }
 
 .banner {
-	width: 100vw;
+	width: 99vw;
 	background-color: var(--purple);
 	font-family: "CabinetMedium";
 	display: flex;
@@ -63,7 +62,7 @@
 }
 
 .tierWrapper {
-	width: 100vw;
+	width: 98vw;
 	font-family: "CabinetBold";
 
 	h2 {
@@ -75,7 +74,7 @@
 		padding: 6rem;
 	}
 	.cardWrapper {
-		width: 100vw;
+		width: 99vw;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -88,7 +87,7 @@
 .iaWrapper {
 	margin-top: 10rem;
 	font-family: "CabinetBold";
-	width: 100vw;
+	width: 99vw;
 
 	.text {
 		font-family: "MazzardR";
@@ -122,7 +121,7 @@
 }
 
 .footerWrapper {
-	width: 100vw;
+	width: 99vw;
 	height: 20rem;
 	background-color: var(--card-purple);
 	margin-top: 15rem;
@@ -169,7 +168,7 @@
 
 	.wrapper {
 		font-family: "MazzardR";
-		width: 100vw;
+		width: 90vw;
 		height: 81.5vh;
 	}
 }

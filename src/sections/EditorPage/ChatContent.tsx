@@ -137,6 +137,7 @@ const ChatMessage: FC<ChatMessageProps> = ({ setActiveChat }) => {
 						placeholder="Type a message"
 						value={inputValue}
 						className={inputValue ? "focused" : ""}
+						maxLength={1000}
 						onChange={(e) => setInputValue(e.target.value)}
 						onKeyDown={(e) => void handleKeyDown(e)}
 						onFocus={(e) => e.target.classList.add("focused")}

@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 
 import styles from "./LoginModal.module.scss";
 import VerificationCode from "./VerificationCode";
+import GoogleIcon from "../Ui/Icons/GoogleIcon";
 
 interface RegisterProps {
 	setRegisterMode: (mode: boolean) => void;
@@ -108,7 +109,7 @@ const RegisterModal: FC<RegisterProps> = ({ setRegisterMode, registerMode }) => 
 								Sign up
 							</button>
 							<button className={styles.buttonGoogle}>
-								<img src="/google.png" alt="google.png" />
+								<GoogleIcon />
 								Sign in with Google
 							</button>
 						</div>

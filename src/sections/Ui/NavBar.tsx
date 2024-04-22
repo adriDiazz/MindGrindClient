@@ -104,14 +104,6 @@ const NavBar: FC<props> = ({
 						</div>
 					</div>
 				)}
-				<img
-					src="/navMobile.png"
-					alt=""
-					className={styles.navMobile}
-					onClick={() => {
-						setShowMobileNav(!showMobileNav);
-					}}
-				/>
 				{note.noteId === "" && (
 					<ul className={styles.navList}>
 						{LINKS.map((link) => (
@@ -144,7 +136,6 @@ const NavBar: FC<props> = ({
 					</Button>
 				)}
 			</nav>
-			{showMobileNav && <NavMobile LINKS={LINKS} />}
 			<ModalComponent opened={opened} setOpened={setOpened}>
 				<AuthForm />
 			</ModalComponent>
