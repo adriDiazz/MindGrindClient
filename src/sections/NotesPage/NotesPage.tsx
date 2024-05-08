@@ -10,20 +10,14 @@ import NotesList from "./NotesList";
 
 const NotesPage = () => {
 	const { user } = useUser();
-	const { notes, loading, reloadNotes } = useNotes();
+	const { notes, loading } = useNotes();
 	const navigate = useNavigate();
+
+	console.log(notes);
 
 	if (!user) {
 		navigate("/");
 	}
-
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		await reloadNotes();
-	// 	};
-
-	// 	void fetchData();
-	// }, []);
 
 	return (
 		<div className={styles.wrapper}>

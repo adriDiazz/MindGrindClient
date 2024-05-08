@@ -47,6 +47,7 @@ import { updateNote } from "../../services/NotesService";
 import { Note, NoteResponse } from "../../types/types";
 import NavBar from "../Ui/NavBar";
 import Chat from "./Chat";
+import { set } from "cypress/types/lodash";
 
 
 
@@ -75,6 +76,7 @@ export default function EditorPage({ setIsEditorUrl }) {
   const [text, setText] = useState("");
   const [note, setNote] = useState(null);
   const { reloadNotes } = useNotes();
+  const [saving, setSaving] = useState(false);
   const debouncedText = useDebounce(text, 1000);
   const ref = useRef<MDXEditorMethods>(null);
 
@@ -173,6 +175,7 @@ export default function EditorPage({ setIsEditorUrl }) {
 
   const captureScreen = async () => {
     if (text) {
+      setSaving(true);
       const url = `${String(import.meta.env.VITE_DOWNLOAD_PDF)}/preview`;
       const markdownContent = text;
 
@@ -189,7 +192,7 @@ export default function EditorPage({ setIsEditorUrl }) {
       const imgData = await screenshot.blob();
 
       sendScreenshotToServer(imgData);
-      
+      setSaving(false);
       }
     };
 
@@ -248,11 +251,19 @@ export default function EditorPage({ setIsEditorUrl }) {
      }, []);
 
   useEffect(() => {
+    setSaving(true);
     const controller = new AbortController();
     const signal = controller.signal;
     const newNote = { ...note?.data };
     newNote.note = debouncedText;
     void updateNote(user.userId, newNote)
+      .then(() => {
+        setSaving(false);
+      })
+      .catch((error) => {
+        console.error("Failed to save note:", error);
+        setSaving(false);
+      });
 
     // Limpieza al desmontar
     return () => controller.abort();
@@ -307,7 +318,7 @@ export default function EditorPage({ setIsEditorUrl }) {
 
   return (
     <>
-      <NavBar note={currentNote.data} />
+      <NavBar note={currentNote.data} saving={saving}/>
       <div className="editor-container" id="capture">
         <MDXEditor
           markdown={text || ""}

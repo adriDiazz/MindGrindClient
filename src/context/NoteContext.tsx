@@ -13,7 +13,7 @@ const NotesContext = createContext(
 // Proveedor del contexto
 export const NotesProvider = ({ children }: { children: React.ReactNode }) => {
 	const [notes, setNotes] = useState([]);
-	const [loading, setLoading] = useState(null);
+	const [loading, setLoading] = useState(true);
 	const navigate = useNavigate();
 	const { user } = useUser();
 
@@ -42,7 +42,6 @@ export const NotesProvider = ({ children }: { children: React.ReactNode }) => {
 
 	const reloadNotes = async () => {
 		try {
-			setLoading(true);
 			const response = await fetch(`${String(import.meta.env.VITE_API_NOTES)}${user?.userId}`);
 			if (!response.ok) {
 				throw new Error("Failed to fetch notes");

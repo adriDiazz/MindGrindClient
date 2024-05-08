@@ -15,12 +15,12 @@ import Button from "./Button";
 import EditIcon from "./Icons/EditIcon";
 import ModalComponent from "./ModalComponent";
 import styles from "./NavBar.module.scss";
-import NavMobile from "./NavMobile";
 
 const LINKS = ["Home", "About", "Contact"];
 
 interface props {
 	note?: Note;
+	saving?: boolean;
 }
 
 const NavBar: FC<props> = ({
@@ -33,6 +33,7 @@ const NavBar: FC<props> = ({
 		updatedAt: new Date(),
 		category: "",
 	},
+	saving,
 }) => {
 	const [opened, setOpened] = useState(false);
 	const [showMobileNav, setShowMobileNav] = useState(false);
@@ -70,6 +71,7 @@ const NavBar: FC<props> = ({
 	const handeleExportPdf = async () => {
 		setLoading(true);
 		const input = document.getElementsByClassName("_contentEditable_11eqz_352")[0];
+		// eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
 		const data = await downloadPdf(note.note);
 		setLoading(false);
 	};
@@ -101,6 +103,7 @@ const NavBar: FC<props> = ({
 							<div className={styles.editIcon} onClick={() => void handleEdit()}>
 								<EditIcon />
 							</div>
+							<span>{saving ? "Saving..." : `Saved`}</span>
 						</div>
 					</div>
 				)}
