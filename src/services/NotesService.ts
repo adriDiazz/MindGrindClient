@@ -39,6 +39,8 @@ export const getLastModifiedNotes = async (userId: string): Promise<Note[]> => {
 		const data = (await lastNotes.json()) as Note[];
 
 		return data;
+
+		return []; // Retorna un array vacío si no hay contenido
 	} catch (error) {
 		// eslint-disable-next-line no-console
 		console.log(error);
