@@ -103,6 +103,8 @@ export default function EditorPage({ setIsEditorUrl }) {
       const formData = new FormData();
       formData.append("image", blob, "screenshot.png");
 
+      console.log("formData", formData);
+
       fetch(url, {
         method: "POST",
         body: formData,

@@ -128,16 +128,6 @@ const NavBar: FC<props> = ({
 						{loading ? <BtnLoader /> : "Export PDF"}
 					</Button>
 				)}
-
-				{!user && note.noteId === "" && (
-					<Button
-						className={`${styles.button} ${styles.navbtn}`}
-						onClick={() => setOpened(true)}
-						id="navbtn"
-					>
-						Log in
-					</Button>
-				)}
 			</nav>
 			<ModalComponent opened={opened} setOpened={setOpened}>
 				<AuthForm />
