@@ -41,7 +41,6 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 			try {
 				const authUser = await getCurrentUser();
 				// eslint-disable-next-line no-console
-				console.log(authUser);
 				setUser(authUser as userType);
 			} catch (error) {
 				setUser(null);
