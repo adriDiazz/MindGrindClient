@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import { createNote, sendPdf } from "../../services/NotesService";
 import Button from "../Ui/Button";
+import ModalComponent from "../Ui/ModalComponent";
 import styles from "./DocModal.module.scss";
+import { useState } from "react";
+import Loader from "../Ui/Loader";
 
 export interface DocModalContentProps {
 	files: File[];
@@ -21,8 +24,10 @@ const DocModalContent: React.FC<DocModalContentProps> = ({
 }) => {
 	const navigate = useNavigate();
 	const { user } = useUser();
+	const [loading, setLoading] = useState(false);
 
 	const handleUpload = async () => {
+		setLoading(true);
 		const chatGptNotes = await sendPdf(files[0]);
 		const noteContent = chatGptNotes.chatGptNotes;
 		console.log(noteContent);
@@ -30,6 +35,7 @@ const DocModalContent: React.FC<DocModalContentProps> = ({
 			data: { chatGptNotes: noteContent },
 			user,
 		});
+		setLoading(false);
 		const userData = createdNote.data;
 
 		const note = userData.notes?.find((note) => note.noteId === createdNote.noteId);
@@ -63,6 +69,9 @@ const DocModalContent: React.FC<DocModalContentProps> = ({
 				>
 					Upload
 				</Button>
+				<ModalComponent opened={loading} setOpened={setLoading}>
+					<Loader />
+				</ModalComponent>
 			</div>
 		</>
 	);
