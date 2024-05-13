@@ -50,7 +50,6 @@ export const NotesProvider = ({ children }: { children: React.ReactNode }) => {
 			const data = (await response.json()) as Note[];
 
 			return data;
-
 			setNotes(data.notes);
 			setLoading(false);
 		} catch (error) {
