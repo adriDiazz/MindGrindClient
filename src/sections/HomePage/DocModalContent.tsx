@@ -31,10 +31,8 @@ const DocModalContent: React.FC<DocModalContentProps> = ({
 			user,
 		});
 		const userData = createdNote.data;
-		console.log(createdNote);
 
 		const note = userData.notes?.find((note) => note.noteId === createdNote.noteId);
-		console.log("note", note);
 		navigate(`/notes/${note.noteId}`, {
 			state: { data: { data: note }, user },
 		});

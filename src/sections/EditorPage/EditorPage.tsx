@@ -103,7 +103,6 @@ export default function EditorPage({ setIsEditorUrl }) {
       const formData = new FormData();
       formData.append("image", blob, "screenshot.png");
 
-      console.log("formData", formData);
 
       fetch(url, {
         method: "POST",
@@ -210,7 +209,6 @@ export default function EditorPage({ setIsEditorUrl }) {
       const SCROLL_THRESHOLD = 65;
 
       if (currentScrollY > SCROLL_THRESHOLD) {
-        console.log(currentScrollY);
         navbarElement.style.position = "fixed";
         navbarElement.style.top = "0";
         navbarElement.style.width = "90vw";

@@ -43,7 +43,6 @@ const ChatMessage: FC<ChatMessageProps> = ({ setActiveChat }) => {
 		const fetchMessages = async () => {
 			try {
 				const response = await getMessages(user?.userId, selectedNote?.noteId);
-				console.log("response", response);
 				setMessages(response.chat);
 			} catch (error) {
 				console.error("Failed to fetch messages:", error);
