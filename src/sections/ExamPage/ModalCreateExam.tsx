@@ -31,6 +31,7 @@ const ModalCreateExam = () => {
 			  }
 			| undefined;
 		setLoading(false);
+
 		if (created?.exam) {
 			navigate(`/exams/${created.exam.exam.examId}`, {
 				state: { exam: created.exam.exam },

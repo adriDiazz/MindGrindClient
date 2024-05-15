@@ -1,5 +1,4 @@
-// UserContext.tsx
-import { getCurrentUser, signOut as SingOut } from "aws-amplify/auth";
+import { fetchAuthSession, getCurrentUser, signOut as conginitoSingOut } from "aws-amplify/auth";
 import { Hub } from "aws-amplify/utils";
 import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
@@ -34,43 +33,64 @@ export const useUser = (): UserContextValue => {
 };
 
 export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
-	const [user, setUser] = useState<userType | null>(null); // Cambia 'any' por el tipo adecuado para tu objeto de usuario
+	const [user, setUser] = useState<userType | null>(null);
 
 	useEffect(() => {
 		const checkUser = async () => {
 			try {
-				const authUser = await getCurrentUser();
-				// eslint-disable-next-line no-console
-				setUser(authUser as userType);
+				const session = await fetchAuthSession();
+
+				if (session.tokens?.accessToken.payload.exp < Date.now()) {
+					const authUser = await getCurrentUser();
+					setUser(authUser as userType);
+				} else {
+					setUser(null);
+				}
 			} catch (error) {
+				console.error("Failed to fetch user session:", error);
 				setUser(null);
+			}
+		};
+
+		const singOutCognito = async () => {
+			try {
+				await conginitoSingOut();
+				setUser(null);
+			} catch (error) {
+				console.error("Error signing out:", error);
 			}
 		};
 
 		Hub.listen("auth", (data) => {
 			const { payload } = data;
-			if ((payload.event as string) === "signIn") {
+			if (payload.event === "signIn" || payload.event === "signOut") {
 				void checkUser();
-			} else if ((payload.event as string) === "signOut") {
-				setUser(null);
 			}
 		});
 
 		void checkUser();
+
+		const intervalId = setInterval(() => {
+			void checkUser(); // Periodically check the auth session
+		}, 5 * 60 * 1000); // Check every 5 minutes
+
+		return () => {
+			void singOutCognito();
+			clearInterval(intervalId);
+		};
 	}, []);
 
 	const signOut = async () => {
 		try {
-			await SingOut();
+			await conginitoSingOut();
 			setUser(null);
 		} catch (error) {
-			console.error("Error al cerrar sesión:", error);
+			console.error("Error signing out:", error);
 		}
 	};
 
 	const contextValue: UserContextValue = {
 		user,
-		// eslint-disable-next-line @typescript-eslint/no-misused-promises
 		signOut,
 		setUser,
 	};
