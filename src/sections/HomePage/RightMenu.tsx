@@ -19,10 +19,12 @@ const LeftMenu: FC<User> = ({ user }) => {
 	const [collapse, setCollapse] = useState(false);
 
 	return (
-		<div className={styles.rightMenuWrapper}>
+		<div className={styles.rightMenuWrapper} styles={collapse && {
+			width: 'auto'
+		}}>
 			<div className={styles.profileWrapper}>
 				<img src="/profile.png" alt="defaultProfileImage" />
-				<span>{user?.username}</span>
+				{!collapse && <span>{user?.username}</span>}
 			</div>
 
 			{/* <div className={styles.lineSeparator}></div> */}
@@ -65,13 +67,16 @@ const LeftMenu: FC<User> = ({ user }) => {
 					{!collapse && <ArrowIcon />}
 			 	</div>
 			</div>
+			{!collapse && 
+			<>
+			
 			<div className={styles.moreMin}>
 				<span>More minutes?</span>
 				<img src="/starY.png" alt="" />
 			</div>
-			<button className={styles.btn} onClick={() => signOut()}>Log Out</button>
+			<button className={styles.btn} onClick={() => signOut()}>Log Out</button></>}
 			<div className={styles.collapseBtn} onClick={() => setCollapse(!collapse)}>
-				<ArrowIcon />
+				{collapse && <ArrowIcon />}
 				{!collapse && <span>Collapse Sidebar</span>}
 			</div>
 		</div>
