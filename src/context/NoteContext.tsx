@@ -48,10 +48,10 @@ export const NotesProvider = ({ children }: { children: React.ReactNode }) => {
 			}
 
 			const data = (await response.json()) as Note[];
-
-			return data;
 			setNotes(data.notes);
 			setLoading(false);
+			return data;
+			
 		} catch (error) {
 			console.error("Error fetching notes:", error);
 		}

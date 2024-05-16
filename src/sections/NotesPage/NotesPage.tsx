@@ -9,11 +9,10 @@ import Loader from "../Ui/Loader";
 import NotesList from "./NotesList";
 
 const NotesPage = () => {
-	const { user } = useUser();
+	const { user, reloaNotes } = useUser();
 	const { notes, loading } = useNotes();
 	const navigate = useNavigate();
 
-	console.log(notes);
 
 	if (!user) {
 		navigate("/");
