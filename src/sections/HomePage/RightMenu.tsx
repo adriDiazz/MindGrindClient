@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 
@@ -16,6 +16,7 @@ interface User {
 const LeftMenu: FC<User> = ({ user }) => {
 	const navigate = useNavigate();
 	const { signOut } = useUser();
+	const [collapse, setCollapse] = useState(false);
 
 	return (
 		<div className={styles.rightMenuWrapper}>
@@ -35,9 +36,9 @@ const LeftMenu: FC<User> = ({ user }) => {
 				>
 					<div className={styles.left}>
 						<HomeIcon />
-						<span>Home</span>
+						{!collapse && <span>Home</span>}
 					</div>
-					<ArrowIcon />
+					{!collapse && <ArrowIcon />}
 				</div>
 				<div
 					className={styles.section}
@@ -47,9 +48,9 @@ const LeftMenu: FC<User> = ({ user }) => {
 				>
 					<div className={styles.left}>
 						<NotesIcon />
-						<span>Notes</span>
+						{!collapse && <span>Notes</span>}
 					</div>
-					<ArrowIcon />
+					{!collapse && <ArrowIcon />}
 				</div>
 				<div
 					className={styles.section}
@@ -59,9 +60,9 @@ const LeftMenu: FC<User> = ({ user }) => {
 				>
 					<div className={styles.left}>
 						<ExamIcon />
-						<span>Learning</span>
+						{!collapse && <span>Learning</span>}
 					</div>
-					<ArrowIcon />
+					{!collapse && <ArrowIcon />}
 			 	</div>
 			</div>
 			<div className={styles.moreMin}>
@@ -69,6 +70,10 @@ const LeftMenu: FC<User> = ({ user }) => {
 				<img src="/starY.png" alt="" />
 			</div>
 			<button className={styles.btn} onClick={() => signOut()}>Log Out</button>
+			<div className={styles.collapseBtn} onClick={() => setCollapse(!collapse)}>
+				<ArrowIcon />
+				{!collapse && <span>Collapse Sidebar</span>}
+			</div>
 		</div>
 	);
 };
