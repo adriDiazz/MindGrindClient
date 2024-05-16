@@ -14,7 +14,7 @@ export interface ResponseApi {
 
 const HomePage = ({ setIsEditorUrl }) => {
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-	const { user } = useUser();
+	const { user, checkSession } = useUser();
 	const [opened, setOpened] = useState(false);
 	const [openedFile, setOpenedFile] = useState(false);
 	const [files, setFiles] = useState<File[]>([]);
@@ -22,6 +22,7 @@ const HomePage = ({ setIsEditorUrl }) => {
 	const [data, setData] = useState<ResponseApi>();
 
 	useEffect(() => {
+		checkSession();
 		const isEditorUrl =
 			window.location.pathname.includes("/editor") || window.location.pathname.includes("/notes/");
 		setIsEditorUrl(isEditorUrl);

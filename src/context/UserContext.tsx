@@ -19,6 +19,7 @@ interface UserContextValue {
 	user: userType | null;
 	signOut: () => void;
 	setUser: React.Dispatch<React.SetStateAction<userType | null>>;
+	checkSession: () => Promise<void>; 
 }
 
 const UserContext = createContext<UserContextValue | undefined>(undefined);
@@ -71,8 +72,8 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 		void checkUser();
 
 		const intervalId = setInterval(() => {
-			void checkUser(); // Periodically check the auth session
-		}, 5 * 60 * 1000); // Check every 5 minutes
+			void checkUser(); 
+		}, 5 * 60 * 1000); 
 
 		return () => {
 			void singOutCognito();
@@ -89,10 +90,23 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 		}
 	};
 
+	const checkSession = async () => {
+		try {
+			const session = await fetchAuthSession();
+			if (session.tokens?.accessToken.payload.exp > Date.now()) {
+				await signOut();
+			}
+			
+		} catch (error) {
+			console.error("Error checking session", error);
+		}
+	}
+
 	const contextValue: UserContextValue = {
 		user,
 		signOut,
 		setUser,
+		checkSession
 	};
 
 	return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
