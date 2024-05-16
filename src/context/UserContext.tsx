@@ -95,6 +95,7 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 			const session = await fetchAuthSession();
 			if (session.tokens?.accessToken.payload.exp > Date.now()/1000) {
 				await signOut();
+				setUser(null)
 			}
 			
 		} catch (error) {
