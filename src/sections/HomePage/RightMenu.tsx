@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
 
 import { userType } from "../../context/UserContext";
 import ArrowIcon from "../Ui/Icons/ArrowIcon";
@@ -14,6 +15,7 @@ interface User {
 
 const LeftMenu: FC<User> = ({ user }) => {
 	const navigate = useNavigate();
+	const { signOut } = useUser();
 
 	return (
 		<div className={styles.rightMenuWrapper}>
@@ -60,13 +62,13 @@ const LeftMenu: FC<User> = ({ user }) => {
 						<span>Learning</span>
 					</div>
 					<ArrowIcon />
-				</div>
+			 	</div>
 			</div>
 			<div className={styles.moreMin}>
 				<span>More minutes?</span>
 				<img src="/starY.png" alt="" />
 			</div>
-			<button className={styles.btn}>Log Out</button>
+			<button className={styles.btn} onClick={() => signOut()}>Log Out</button>
 		</div>
 	);
 };
