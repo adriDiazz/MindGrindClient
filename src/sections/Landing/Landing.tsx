@@ -27,9 +27,12 @@ const Landing = () => {
 							<span>Keep Productive</span>
 						</h1>
 						<p>
-							Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+							Automatically transcribe educational videos, 
+							generate structured notes, and interact directly with your learning material.
+							All in one place.MindGrind,Leverage AI to generate well-organized notes, 
+							making revision and learning more effective.
 							<br />
-							Lorem Ipsum ha sido el texto de relleno estándar de
+							Get Started for Free
 						</p>
 						<div className={styles.btnWrapper}>
 							<Button onClick={() => setOpened(true)}>Register</Button>
@@ -59,9 +62,9 @@ const Landing = () => {
 				<div className={styles.text}>
 					<h2>Create with AI</h2>
 					<p>
-						Revoluciona tu forma de crear contenido con Estudio Mágico, nuestro paquete de
-						herramientas con IA. Genera texto con la voz de tu marca usando Escritura Mágica o
-						transforma tus fotos con Edición Mágica.
+						Convert educational videos into text automatically, saving you time and enhancing your study efficiency.
+						Leverage AI to generate well-organized notes, making revision and learning more effective.
+						Access your notes anywhere, anytime on any device, facilitating continuous learning without boundaries
 					</p>
 				</div>
 				<div className={styles.imgWrapper}>
