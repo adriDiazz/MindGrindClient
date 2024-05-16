@@ -41,7 +41,7 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 			try {
 				const session = await fetchAuthSession();
 
-				if (session.tokens?.accessToken.payload.exp < Date.now()) {
+				if (session.tokens?.accessToken.payload.exp < Date.now() / 1000) {
 					const authUser = await getCurrentUser();
 					setUser(authUser as userType);
 				} else {
@@ -93,7 +93,7 @@ export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
 	const checkSession = async () => {
 		try {
 			const session = await fetchAuthSession();
-			if (session.tokens?.accessToken.payload.exp > Date.now()) {
+			if (session.tokens?.accessToken.payload.exp > Date.now()/1000) {
 				await signOut();
 			}
 			
