@@ -22,7 +22,6 @@ const ModalDeleteNote: FC<ModalDeleteTitleProps> = ({ note, setOpenedDelete }) =
 		if (response) {
 			setOpenedDelete(false);
 			await reloadNotes();
-			window.location.reload();
 		}
 	};
 

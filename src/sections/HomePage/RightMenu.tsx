@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../../context/UserContext";
 
-import { userType } from "../../context/UserContext";
+import { userType, useUser } from "../../context/UserContext";
 import ArrowIcon from "../Ui/Icons/ArrowIcon";
 import ExamIcon from "../Ui/Icons/ExamIcon";
 import HomeIcon from "../Ui/Icons/HomeIcon";
@@ -19,7 +18,7 @@ const LeftMenu: FC<User> = ({ user }) => {
 	const [collapse, setCollapse] = useState(false);
 
 	return (
-		<div className={styles.rightMenuWrapper} style={collapse ? { width: 'auto' } : {}}>
+		<div className={styles.rightMenuWrapper} style={collapse ? { width: "auto" } : {}}>
 			<div className={styles.profileWrapper}>
 				<img src="/profile.png" alt="defaultProfileImage" />
 				{!collapse && <span>{user?.username}</span>}
@@ -27,7 +26,7 @@ const LeftMenu: FC<User> = ({ user }) => {
 
 			{/* <div className={styles.lineSeparator}></div> */}
 
-			<div className={styles.sectionsWrapper}>
+			<div className={styles.sectionsWrapper} style={collapse ? { height: "77%" } : {}}>
 				<div
 					className={styles.section}
 					onClick={() => {
@@ -63,19 +62,29 @@ const LeftMenu: FC<User> = ({ user }) => {
 						{!collapse && <span>Learning</span>}
 					</div>
 					{!collapse && <ArrowIcon />}
-			 	</div>
+				</div>
 			</div>
-			{!collapse && 
-			<>
-			
-			<div className={styles.moreMin}>
-				<span>More minutes?</span>
-				<img src="/starY.png" alt="" />
-			</div>
-			<button className={styles.btn} onClick={() => signOut()}>Log Out</button></>}
-			<div className={styles.lineSeparator}></div> 
-			<div className={styles.collapseBtn} onClick={() => setCollapse(!collapse)}>
-				{collapse && <ArrowIcon />}
+			{!collapse && (
+				<>
+					<div className={styles.moreMin}>
+						<span>More minutes?</span>
+						<img src="/starY.png" alt="" />
+					</div>
+					<button className={styles.btn} onClick={() => signOut()}>
+						Log Out
+					</button>
+				</>
+			)}
+			<div className={styles.lineSeparator}></div>
+			<div
+				className={`${styles.collapseBtn} ${!collapse && styles.rotateArrow}`}
+				onClick={() => setCollapse(!collapse)}
+				style={{
+					marginTop: "17px",
+					cursor: "pointer",
+				}}
+			>
+				<ArrowIcon />
 				{!collapse && <span>Collapse Sidebar</span>}
 			</div>
 		</div>
