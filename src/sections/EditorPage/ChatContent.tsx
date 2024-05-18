@@ -62,6 +62,7 @@ const ChatMessage: FC<ChatMessageProps> = ({ setActiveChat }) => {
 			return;
 		}
 		setLoading(true);
+		setInputValue("");
 		const sentMessage = { message: inputValue, isSent: true };
 		setMessages((prevMessages) => [...prevMessages, sentMessage]);
 
