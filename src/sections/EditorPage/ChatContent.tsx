@@ -1,5 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 
+import { marked } from "marked";
 import { FC, KeyboardEvent, useEffect, useRef, useState } from "react"; // Importa useRef
 import { toast, ToastContainer } from "react-toastify";
 
@@ -111,7 +112,12 @@ const ChatMessage: FC<ChatMessageProps> = ({ setActiveChat }) => {
 			<div className={styles.chatContent}>
 				{messages.map((message, index) => (
 					<div key={index} className={message.isSent ? styles.sentMessage : styles.receivedMessage}>
-						{message.message}
+						{!message.isSent ? (
+							<div dangerouslySetInnerHTML={{ __html: marked.parse(message.message) }} />
+						) : (
+							message.message
+						)}
+
 						{!message.isSent && (
 							<div onClick={() => void handleCopy(message.message)} className={styles.copyButton}>
 								<CopyIcon />
