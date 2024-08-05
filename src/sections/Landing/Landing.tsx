@@ -23,8 +23,7 @@ const Landing = () => {
         <div className={styles.innerWrapper}>
           <div className={styles.rightWrapper}>
             <h1>
-              A Better Way To
-              <br />
+              A Better Way To <br />
               <span>Keep Productive</span>
             </h1>
             <p>
