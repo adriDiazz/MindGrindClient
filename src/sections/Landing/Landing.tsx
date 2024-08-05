@@ -27,10 +27,9 @@ const Landing = () => {
 							<span>Keep Productive</span>
 						</h1>
 						<p>
-							Automatically transcribe educational videos, 
-							generate structured notes, and interact directly with your learning material.
-							All in one place.MindGrind,Leverage AI to generate well-organized notes, 
-							making revision and learning more effective.
+							Automatically transcribe educational videos, generate structured notes, and interact
+							directly with your learning material. All in one place.MindGrind,Leverage AI to
+							generate well-organized notes, making revision and learning more effective.
 							<br />
 							Get Started for Free
 						</p>
@@ -62,9 +61,10 @@ const Landing = () => {
 				<div className={styles.text}>
 					<h2>Create with AI</h2>
 					<p>
-						Convert educational videos into text automatically, saving you time and enhancing your study efficiency.
-						Leverage AI to generate well-organized notes, making revision and learning more effective.
-						Access your notes anywhere, anytime on any device, facilitating continuous learning without boundaries
+						Convert educational videos into text automatically, saving you time and enhancing your
+						study efficiency. Leverage AI to generate well-organized notes, making revision and
+						learning more effective. Access your notes anywhere, anytime on any device, facilitating
+						continuous learning without boundaries
 					</p>
 				</div>
 				<div className={styles.imgWrapper}>

@@ -341,24 +341,8 @@ export default function EditorPage({ setIsEditorUrl }) {
                   <InsertTable />
                   <InsertThematicBreak />
                   <ListsToggle />
-                  <ConditionalContents
-                    options={[
-                      {
-                        when: (editor) => editor?.editorType === "codeblock",
-                        contents: () => <ChangeCodeMirrorLanguage />,
-                      },
-                      {
-                        when: (editor) => editor?.editorType === "sandpack",
-                        contents: () => <ShowSandpackInfo />,
-                      },
-                      {
-                        fallback: () => (
-                          <>
-                          </>
-                        ),
-                      },
-                    ]}
-                  />
+
+
                 </>
               ),
             }),
